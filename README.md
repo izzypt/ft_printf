@@ -3,14 +3,13 @@ You have to recode the printf() function from libc.
 
 | Command | Description |
 | --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
-| git diff | Show file differences that haven't been staged |
-| git diff | Show file differences that haven't been staged |
-| git diff | Show file differences that haven't been staged |
-| git diff | Show file differences that haven't been staged |
+| Program name  | libftprintf.a |
+| Turn in files  | Makefile, *.h, */*.h, *.c, */*.c |
+| Makefile | NAME, all, clean, fclean, re |
+| External functs| malloc, free, write, va_start, va_arg, va_copy, va_end |
+| Libft authorized | Yes |
+| Description | Write a library that contains ft_printf(), a function that will mimic the original printf()|
+
 
 The prototype of ft_printf() is:
   ###
