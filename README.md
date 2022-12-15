@@ -37,6 +37,6 @@ You have to implement the following conversions:
     • %X Prints a number in hexadecimal (base 16) uppercase format.
     • %% Prints a percent sign.
     
-### Helpful Concepts
+## Helpful Concepts
 
 Tudo a dizer e a fazer
