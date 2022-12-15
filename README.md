@@ -1,7 +1,7 @@
 # ft_printf
 You have to recode the printf() function from libc.
 
-| Command | Description |
+| Requirements | Description |
 | --- | --- |
 | Program name  | libftprintf.a |
 | Turn in files  | Makefile, *.h, */*.h, *.c, */*.c |
