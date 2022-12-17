@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 19:56:14 by smagalha          #+#    #+#             */
-/*   Updated: 2022/12/17 23:04:12 by smagalha         ###   ########.fr       */
+/*   Updated: 2022/12/17 23:22:05 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,14 @@
 
 int	handleSpecifier(char specifier, va_list argumento)
 {
+	if (specifier == 'c')
+		ft_putchar_fd(va_arg(argumento, int), 1);
 	if (specifier == 's')
 		ft_putstr_fd(va_arg(argumento, char *), 1);
-	if (specifier == 'i')
+	if (specifier == 'i' || specifier == 'd' )
 		ft_putnbr_fd(va_arg(argumento, int), 1);
+	if (specifier == '%')
+		ft_putchar_fd('%', 1);
 	return (0);
 }
 
@@ -46,10 +50,11 @@ int	ft_printf(const char *s, ...)
 
 void	main(void)
 {
-	char string1[] = "Uma casinha muito linda";
-	int numero = 5;
+	char	string1[] = "Uma casinha muito linda";
+	int		numero = 5;
+	char	letra = 'Z';
 
-	ft_printf("Uma string de teste: %i", numero);
+	ft_printf("Uma string de teste: %c, %s", letra, string1);
 }
 
 //cspdiuxX%
