@@ -39,7 +39,7 @@ You have to implement the following conversions:
     
 ## Helpful Concepts
 
-### <stdarg.h> : va_list, va_start and va_arg 
+### stdarg.h : va_list, va_start and va_arg 
 
 va_list, va_arg, and va_start are used to allow a function to accept a variable number of arguments.
 
