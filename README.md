@@ -39,7 +39,9 @@ You have to implement the following conversions:
     
 ## Helpful Concepts
 
-### stdarg.h : va_list, va_start and va_arg 
+### Variadic functions
+
+Variadic functions are functions that can take a variable number of arguments. A variadic function adds flexibility to the program. It takes one fixed argument and then any number of arguments can be passed. The variadic function consists of at least one fixed variable and then an ellipsis(…) as the last parameter.
 
 va_list, va_arg, and va_start are used to allow a function to accept a variable number of arguments.
 
