@@ -1,4 +1,4 @@
-SRCS			=
+SRCS			= ft_printf ft_putaddress ft_putchar_fd ft_puthex ft_putnbr_fd ft_putstr_fd ft_strlen \
 
 OBJS			= $(SRCS:=.o)
 

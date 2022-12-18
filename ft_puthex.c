@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 18:56:32 by smagalha          #+#    #+#             */
-/*   Updated: 2022/12/18 19:44:59 by smagalha         ###   ########.fr       */
+/*   Created: 2022/12/18 19:05:13 by smagalha          #+#    #+#             */
+/*   Updated: 2022/12/18 19:16:03 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Outputs the integer ’n’ to the given file descriptor.
-void	ft_putnbr_fd(int nb, int fd)
+int	ft_puthex(unsigned long n, const char ch)
 {
-	unsigned int	nbr;
+	int			cont;
+	const char	*hex;
+	const char	*hexm;
 
-	if (nb < 0)
+	cont = 0;
+	hex = "0123456789abcdef";
+	hexm = "0123456789ABCDEF";
+	if (n >= 16)
 	{
-		ft_putchar_fd('-', fd);
-		nbr = (unsigned int)(nb * -1);
+		cont += ft_puthex(n / 16, ch);
+		cont += ft_puthex(n % 16, ch);
 	}
-	else
-		nbr = (unsigned int)nb;
-	if (nbr >= 10)
-		ft_putnbr_fd(nbr / 10, fd);
-	ft_putchar_fd((char)('0' + nbr % 10), fd);
+	if (n < 16)
+	{
+		if (ch == 'x')
+			write(1, &hex[n], 1);
+		else if (ch == 'X')
+			write(1, &hexm[n], 1);
+	}
+	return (cont);
 }

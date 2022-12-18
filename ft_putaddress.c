@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putaddress.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 18:56:32 by smagalha          #+#    #+#             */
-/*   Updated: 2022/12/18 19:44:59 by smagalha         ###   ########.fr       */
+/*   Created: 2022/12/18 19:41:23 by smagalha          #+#    #+#             */
+/*   Updated: 2022/12/18 20:36:54 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Outputs the integer ’n’ to the given file descriptor.
-void	ft_putnbr_fd(int nb, int fd)
+int	ft_putaddress(void *address)
 {
-	unsigned int	nbr;
+	int		cont;
+	char	*address_prefix;
 
-	if (nb < 0)
+	address_prefix = "0x";
+	cont = 0;
+	if (!address)
 	{
-		ft_putchar_fd('-', fd);
-		nbr = (unsigned int)(nb * -1);
+		return (ft_putstr_fd("(nil)", 1));
 	}
-	else
-		nbr = (unsigned int)nb;
-	if (nbr >= 10)
-		ft_putnbr_fd(nbr / 10, fd);
-	ft_putchar_fd((char)('0' + nbr % 10), fd);
+	cont += ft_putstr_fd(address_prefix, 1);
+	cont += ft_puthex((int *) address, 'x');
+	return (cont);
 }

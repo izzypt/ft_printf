@@ -6,18 +6,22 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:52:52 by smagalha          #+#    #+#             */
-/*   Updated: 2022/12/17 22:39:26 by smagalha         ###   ########.fr       */
+/*   Updated: 2022/12/18 20:23:36 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_strlen.c"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int fd)
 {
+	int	len;
+
+	len = ft_strlen(s);
 	if (fd < 0)
-		return ;
+		return (0);
 	if (!s || !fd)
-		return ;
-	write(fd, s, ft_strlen(s));
+		return (0);
+	write(fd, s, len );
+
+	return (len);
 }
