@@ -20,7 +20,7 @@ int main(void)
 void vout(int max, ...)                                                         
 {                                                                               
     va_list dias_da_semana;
-    va_start(dias_da_semana, max);         
+    va_start(dias_da_semana, max);
 
     for (int i = 0; i < max; i++) {
         char *str = va_arg(dias_da_semana, char*);

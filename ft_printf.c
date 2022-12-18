@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 19:56:14 by smagalha          #+#    #+#             */
-/*   Updated: 2022/12/18 20:34:36 by smagalha         ###   ########.fr       */
+/*   Updated: 2022/12/18 21:04:48 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,14 @@ int	ft_printf(const char *s, ...)
 	return (len);
 }
 
-void main(void)
+int main(void)
 {
-	char string1[] = "Uma casinha muito linda";
-	int numero = 5;
-	int num = 24;
-	char letra = 'Z';
-	int *pNum = &num;
+    int num = 42;
+    int *pointer1 = &num;
 
-	ft_printf("Uma string de teste: %c, %s, %X, %d, %p", letra, string1, num, numero, pNum);
+    ft_printf("Print pointer address: %p\n", (void*)pointer1);
+
+    return 0;
 }
 /*
 //cspdiuxX%
