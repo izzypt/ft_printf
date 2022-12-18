@@ -41,11 +41,9 @@ You have to implement the following conversions:
 
 ### Variadic functions
 
-Variadic functions are functions that can take a variable number of arguments. A variadic function adds flexibility to the program. It takes one fixed argument and then any number of arguments can be passed. The variadic function consists of at least one fixed variable and then an ellipsis(…) as the last parameter.
+Variadic functions are functions that can take a variable number of arguments. It takes one fixed argument and then any number of arguments can be passed. The variadic function consists of at least one fixed variable and then an ellipsis(…) as the last parameter.
 
-va_list, va_arg, and va_start are used to allow a function to accept a variable number of arguments.
-
-In C, it is not possible to define a function with a variable number of arguments in the traditional sense. However, it is possible to define a function that takes a variable number of arguments by using a mechanism called "variable argument lists". This is done using three macros:
+va_list, va_arg, and va_start are used to help us achieve this goal: to accept a variable number of arguments.
 
 va_list: This is a type that is used to hold a list of arguments of a variable number.
 va_start: This macro is used to initialize a va_list object and start accessing the arguments in the list.
