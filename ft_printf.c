@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 19:56:14 by smagalha          #+#    #+#             */
-/*   Updated: 2022/12/19 16:35:19 by smagalha         ###   ########.fr       */
+/*   Updated: 2022/12/19 17:20:22 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	handle_specifier(char specifier, va_list argumento)
 		ft_putchar_fd(va_arg(argumento, int), 1);
 	if (specifier == 's')
 		ft_putstr_fd(va_arg(argumento, char *), 1);
+	if (specifier == 'u')
+		ft_putnbr_fd(va_arg(argumento, int), 1);
 	if (specifier == 'i' || specifier == 'd')
 		ft_putnbr_fd(va_arg(argumento, int), 1);
 	if (specifier == 'x' || specifier == 'X')
@@ -72,14 +74,14 @@ int main(void)
 //cspdiuxX%
 
 
-c = character
-s = string
-p = Pointer address
-d = signed decimal integer
-i = integer
+c = character DONE
+s = string DONE
+p = Pointer address DONE
+d = signed decimal integer DONE
+i = integer DONE
 u = Unsigned decimal integer
-x = Unsigned hexadecimal integer
-X = Unsigned hexadecimal integer (capital letters)
-% = Character
+x = Unsigned hexadecimal integer DONE
+X = Unsigned hexadecimal integer (capital letters) DONE
+% = Character DONE
 
 */
