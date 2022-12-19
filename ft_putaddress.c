@@ -24,6 +24,6 @@ int	ft_putaddress(void *address)
 		return (ft_putstr_fd("(nil)", 1));
 	}
 	cont += ft_putstr_fd(address_prefix, 1);
-	cont += ft_puthex(ptr, 'x');
+	cont += ft_puthex(address, 'x');
 	return (cont);
 }
