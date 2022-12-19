@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_putaddress(void *ptr)
+int	ft_putaddress(void *address)
 {
 	int		cont;
 	char	*address_prefix;
