@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 19:56:14 by smagalha          #+#    #+#             */
-/*   Updated: 2022/12/18 21:04:48 by smagalha         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:35:19 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	handle_specifier(char specifier, va_list argumento)
 	if (specifier == 'x' || specifier == 'X')
 		ft_puthex(va_arg(argumento, unsigned int), specifier);
 	if (specifier == 'p')
-		ft_putaddress(va_arg(argumento, void *));
+		ft_putaddress(va_arg(argumento, unsigned long));
 	if (specifier == '%')
 		ft_putchar_fd('%', 1);
 	return (0);
@@ -37,8 +37,8 @@ int	handle_specifier(char specifier, va_list argumento)
 int	ft_printf(const char *s, ...)
 {
 	va_list	argumentos;
-	int 	i;
-	int 	len;
+	int		i;
+	int		len;
 
 	len = 0;
 	i = 0;
@@ -61,12 +61,12 @@ int	ft_printf(const char *s, ...)
 
 int main(void)
 {
-    int num = 42;
-    int *pointer1 = &num;
+    int	num = 42;
+    int	*pointer1 = &num;
 
     ft_printf("Print pointer address: %p\n", (void*)pointer1);
 
-    return 0;
+    return (0);
 }
 /*
 //cspdiuxX%

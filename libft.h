@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 22:58:41 by smagalha          #+#    #+#             */
-/*   Updated: 2022/12/18 20:23:57 by smagalha         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:27:29 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ void	ft_putchar_fd(char c, int fd);
 int		ft_putstr_fd(char *s, int fd);
 size_t	ft_strlen(const char *s);
 int		ft_puthex(unsigned long n, const char ch);
+int	    ft_putaddress(unsigned long address);
 
 #endif
