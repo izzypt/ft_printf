@@ -6,11 +6,11 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 19:56:14 by smagalha          #+#    #+#             */
-/*   Updated: 2022/12/19 17:20:22 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/01/07 23:17:50 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	handle_specifier(char specifier, va_list argumento)
 {
@@ -20,20 +20,20 @@ int	handle_specifier(char specifier, va_list argumento)
 	if (!argumento)
 		return (0);
 	if (specifier == 'c')
-		ft_putchar_fd(va_arg(argumento, int), 1);
+		len = ft_putchar_fd(va_arg(argumento, int), 1);
 	if (specifier == 's')
-		ft_putstr_fd(va_arg(argumento, char *), 1);
+		len = ft_putstr_fd(va_arg(argumento, char *), 1);
 	if (specifier == 'u')
-		ft_putnbr_fd(va_arg(argumento, int), 1);
+		len = ft_putnbr_fd(va_arg(argumento, int), 1);
 	if (specifier == 'i' || specifier == 'd')
-		ft_putnbr_fd(va_arg(argumento, int), 1);
+		len = ft_putnbr_fd(va_arg(argumento, int), 1);
 	if (specifier == 'x' || specifier == 'X')
-		ft_puthex(va_arg(argumento, unsigned int), specifier);
+		len = ft_puthex(va_arg(argumento, unsigned int), specifier);
 	if (specifier == 'p')
-		ft_putaddress(va_arg(argumento, unsigned long));
+		len = ft_putaddress(va_arg(argumento, unsigned long));
 	if (specifier == '%')
-		ft_putchar_fd('%', 1);
-	return (0);
+		len = ft_putchar_fd('%', 1);
+	return (len);
 }
 
 int	ft_printf(const char *s, ...)
@@ -50,17 +50,19 @@ int	ft_printf(const char *s, ...)
 		if (s[i] == '%')
 		{
 			i++;
-			handle_specifier(s[i], argumentos);
+			len += handle_specifier(s[i], argumentos);
 		}
 		else
+		{
 			write(1, &s[i], 1);
+			len++;
+		}
 		i++;
 	}
 	va_end(argumentos);
-
 	return (len);
 }
-
+/*
 int main(void)
 {
     int	num = 42;
@@ -70,7 +72,7 @@ int main(void)
 
     return (0);
 }
-/*
+
 //cspdiuxX%
 
 
@@ -79,7 +81,7 @@ s = string DONE
 p = Pointer address DONE
 d = signed decimal integer DONE
 i = integer DONE
-u = Unsigned decimal integer
+u = Unsigned decimal integer = 0 to 4294967295
 x = Unsigned hexadecimal integer DONE
 X = Unsigned hexadecimal integer (capital letters) DONE
 % = Character DONE

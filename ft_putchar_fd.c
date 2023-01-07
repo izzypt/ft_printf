@@ -6,11 +6,11 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:46:05 by smagalha          #+#    #+#             */
-/*   Updated: 2022/12/19 16:55:41 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/01/07 21:37:57 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	ft_putchar_fd(char c, int fd)
 {

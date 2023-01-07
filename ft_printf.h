@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 13:24:28 by smagalha          #+#    #+#             */
-/*   Updated: 2023/01/07 21:39:07 by smagalha         ###   ########.fr       */
+/*   Created: 2022/12/14 22:58:41 by smagalha          #+#    #+#             */
+/*   Updated: 2023/01/07 22:22:00 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-size_t	ft_strlen(const char *s)
-{
-	int	counter;
+# include <unistd.h>
+# include <stdio.h>
+# include <stdarg.h>
 
-	counter = 0;
-	while (s[counter])
-	{
-		counter++;
-	}
-	return (counter);
-}
+int		ft_putnbr_fd(int nb, int fd);
+int		ft_putchar_fd(char c, int fd);
+int		ft_putstr_fd(char *s, int fd);
+size_t	ft_strlen(const char *s);
+int		ft_puthex(unsigned long n, const char ch);
+int		ft_putaddress(unsigned long address);
+int		ft_printf(const char *s, ...);
+
+#endif

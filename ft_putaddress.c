@@ -6,24 +6,24 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 19:41:23 by smagalha          #+#    #+#             */
-/*   Updated: 2022/12/19 16:49:11 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/01/07 22:24:16 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	ft_putaddress(unsigned long address)
 {
-	int				cont;
+	int				len;
 	char			*address_prefix;
 
 	address_prefix = "0x";
-	cont = 0;
-	if (!address) 
+	len = 0;
+	if (!address)
 	{
 		return (ft_putstr_fd("(nil)", 1));
 	}
-	cont += ft_putstr_fd(address_prefix, 1);
-	cont += ft_puthex(address, 'x');
-	return (cont);
+	len += ft_putstr_fd(address_prefix, 1);
+	len += ft_puthex(address, 'x');
+	return (len);
 }

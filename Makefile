@@ -1,6 +1,7 @@
-SRCS			= ft_printf ft_putaddress ft_putchar_fd ft_puthex ft_putnbr_fd ft_putstr_fd ft_strlen \
+SRCS			=	ft_printf.c ft_putaddress.c ft_putchar_fd.c ft_puthex.c \
+					ft_putnbr_fd.c ft_putstr_fd.c ft_strlen.c
 
-OBJS			= $(SRCS:=.o)
+OBJS			= $(SRCS:.c=.o)
 
 
 CC				= cc
@@ -13,9 +14,6 @@ all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
-
-bonus: 			$(OBJS)
-				ar rc $(NAME) $(OBJS)
 
 clean:
 				$(RM) $(OBJS)
