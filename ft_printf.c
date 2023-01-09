@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 19:56:14 by smagalha          #+#    #+#             */
-/*   Updated: 2023/01/07 23:17:50 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/01/08 18:34:18 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	handle_specifier(char specifier, va_list argumento)
 	if (specifier == 's')
 		len = ft_putstr_fd(va_arg(argumento, char *), 1);
 	if (specifier == 'u')
-		len = ft_putnbr_fd(va_arg(argumento, int), 1);
+		len = ft_putnbru_fd(va_arg(argumento, unsigned int), 1);
 	if (specifier == 'i' || specifier == 'd')
 		len = ft_putnbr_fd(va_arg(argumento, int), 1);
 	if (specifier == 'x' || specifier == 'X')
@@ -62,18 +62,15 @@ int	ft_printf(const char *s, ...)
 	va_end(argumentos);
 	return (len);
 }
-/*
-int main(void)
-{
-    int	num = 42;
-    int	*pointer1 = &num;
 
-    ft_printf("Print pointer address: %p\n", (void*)pointer1);
+/* int main(void)
+// {
+// 	//int	num = NULL;
+// 	char *s = NULL;
+// 	//ft_printf(" NULL %s NULL ", NULL);
+// 	printf(" NULL %s NULL ", s);
 
-    return (0);
-}
-
-//cspdiuxX%
+// 	return (0);
 
 
 c = character DONE

@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbru_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 14:52:52 by smagalha          #+#    #+#             */
-/*   Updated: 2023/01/08 17:53:54 by smagalha         ###   ########.fr       */
+/*   Created: 2023/01/08 16:39:53 by smagalha          #+#    #+#             */
+/*   Updated: 2023/01/08 18:26:55 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr_fd(char *s, int fd)
+// Outputs the integer ’n’ to the given file descriptor.
+int	ft_putnbru_fd(unsigned int nb, int fd)
 {
-	int	len;
+	int				len;
 
-	if (!s)
-		return (ft_putstr_fd("(null)", 1));
-	len = ft_strlen(s);
-	if (fd < 0)
-		return (0);
-	write(fd, s, len);
+	len = 0;
+	if (nb >= 10)
+		len += ft_putnbru_fd(nb / 10, fd);
+	len += ft_putchar_fd((char)('0' + nb % 10), fd);
 	return (len);
 }
-
-// int main(void)
-// {
-// 	//int	num = NULL;
-// 	char *s = NULL;
-// 	ft_putstr_fd(s, 1);
-// 	printf("\n%s ", s);
-
-// 	return (0);
-// }

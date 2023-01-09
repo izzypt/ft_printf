@@ -6,7 +6,7 @@
 /*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 22:58:41 by smagalha          #+#    #+#             */
-/*   Updated: 2023/01/07 22:22:00 by smagalha         ###   ########.fr       */
+/*   Updated: 2023/01/08 16:42:27 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ size_t	ft_strlen(const char *s);
 int		ft_puthex(unsigned long n, const char ch);
 int		ft_putaddress(unsigned long address);
 int		ft_printf(const char *s, ...);
+int		ft_putnbru_fd(unsigned int nb, int fd);
 
 #endif
